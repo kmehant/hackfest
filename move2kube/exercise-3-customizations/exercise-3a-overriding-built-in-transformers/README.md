@@ -36,7 +36,7 @@
     $ cat myproject/source/frontend/Dockerfile
     ```
 
-    If we notice the Dockerfile generated for the frontend app, it uses registry.access.redhat.com/ubi8/nodejs-12 as base image.
+    If we notice the Dockerfile generated for the frontend app, it uses registry.access.redhat.com/ubi8/nodejs-14 as base image.
     
     ```console
     FROM registry.access.redhat.com/ubi8/nodejs-14
