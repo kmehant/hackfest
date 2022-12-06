@@ -77,7 +77,7 @@
     $ cat myproject/source/frontend/Dockerfile
     ```
 
-    Observe the base image is changed from `registry.access.redhat.com/ubi8/nodejs-12` to `quay.io/konveyor/nodejs-12` in the generated nodejs dockerfile. The CMD instruction in the generated dockerfile is modified to use the `start-nodejs.sh` file.
+    Observe the base image is changed from `registry.access.redhat.com/ubi8/nodejs-14` to `quay.io/konveyor/nodejs-12` in the generated nodejs dockerfile. The CMD instruction in the generated dockerfile is modified to use the `start-nodejs.sh` file.
 
     ```console
     FROM quay.io/konveyor/nodejs-12
