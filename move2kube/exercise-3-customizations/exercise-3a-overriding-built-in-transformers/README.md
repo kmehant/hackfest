@@ -14,7 +14,7 @@
     $ move2kube transform -s ../../source/enterprise-app/ --qa-skip --overwrite
     ```
 
-    If you are using the Move2Kube UI, create a new workspace and create a new project inside the workspace. Now, keep the the Project input type as Source folder and upload the [enterprise-app.zip](https://github.com/Akash-Nayak/hackfest/blob/main/move2kube/source/enterprise-app.zip) file. Now, keep the Project input type as Customization folder and upload the [customizations.zip](./customizations.zip). Click on the Start Planning button. After the planning completes, click on the Start Transformation button.
+    If you are using the Move2Kube UI, create a new workspace and create a new project inside the workspace. Now, keep the the Project input type as Source folder and upload the [enterprise-app.zip](https://github.com/Akash-Nayak/hackfest/blob/main/move2kube/source/enterprise-app.zip) file. After the planning completes, click on the Start Transformation button.
 
 2. List the files in the frontend service directory of the `enterprise-app`:
 
@@ -70,6 +70,8 @@
     ```console
     $ move2kube transform -s ../../source/enterprise-app/ -c customizations/ --qa-skip --overwrite
     ```
+
+    If you are using the Move2Kube UI, create a new workspace and create a new project inside the workspace. Now, keep the the Project input type as Source folder and upload the [enterprise-app.zip](https://github.com/Akash-Nayak/hackfest/blob/main/move2kube/source/enterprise-app.zip) file. Now, keep the Project input type as Customization folder and upload the [customizations.zip](./customizations.zip). Click on the Start Planning button. After the planning completes, click on the Start Transformation button.
 
 7. Check the modified Dockerfile for frontend service of the `enterprise-app`:
 
