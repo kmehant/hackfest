@@ -21,7 +21,9 @@
     As you notice, there are no scripts named `start-nodejs.sh` in the frontend service directory.
     
     ```console
-    Dockerfile        __mocks__         jest.config.js    package-lock.json src               test-setup.js     webpack.dev.js    LICENSE           dist              manifest.yml      package.json      stories           tsconfig.json     webpack.prod.js   README.md         dr-surge.js       nodemon.json      server.js         stylePaths.js     webpack.common.js
+    Dockerfile      __mocks__       jest.config.js    package-lock.json    src               test-setup.js         webpack.dev.js
+    LICENSE         dist            manifest.yml      package.json         stories           tsconfig.json         webpack.prod.js
+    README.md       dr-surge.js     nodemon.json      server.js            stylePaths.js     webpack.common.js
     ```
 
 3. Check the generated Dockerfile for frontend service of the `enterprise-app`:
