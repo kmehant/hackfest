@@ -1,6 +1,6 @@
 # Customizing generated Dockerfile and behavior of built-in transformer
 
-## Steps for Move2Kube CLI
+## Steps for Move2Kube CLI/UI
 
 1. Run Move2Kube transform on the `enterprise-app` without any customizations and observe the output:
 
@@ -8,9 +8,13 @@
     $ cd exercise-3-customizations/exercise-3a-overriding-built-in-transformers
     ```
 
+    `--qa-skip` option allows us to run Move2Kube transform non-interactively to skip the questions and use the default answers.
+
     ```console
     $ move2kube transform -s ../../source/enterprise-app/ --qa-skip --overwrite
     ```
+
+    If you are using the Move2Kube UI, create a new workspace and create a new project inside the workspace. Now, keep the the Project input type as Source folder and upload the [enterprise-app.zip](https://github.com/Akash-Nayak/hackfest/blob/main/move2kube/source/enterprise-app.zip) file. Click on the Start Planning button. After the planning completes, click on the Start Transformation button.
 
 2. List the files in the frontend service directory of the `enterprise-app`:
 
@@ -35,13 +39,7 @@
     If we notice the Dockerfile generated for the frontend app, it uses registry.access.redhat.com/ubi8/nodejs-12 as base image.
     
     ```console
-    FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
-    RUN microdnf update && microdnf install wget xz tar && microdnf clean all && \
-        wget https://nodejs.org/dist/v14.20.0/node-v14.20.0-linux-x64.tar.xz && \
-        tar -xJf node-v14.20.0-linux-x64.tar.xz && \
-        mv node-v14.20.0-linux-x64 /node && \
-        rm -f node-v14.20.0-linux-x64.tar.xz
-    ENV PATH="$PATH:/node/bin"
+    FROM registry.access.redhat.com/ubi8/nodejs-14
     COPY . .
     RUN npm install
     RUN npm run build
@@ -79,18 +77,7 @@
     $ cat myproject/source/frontend/Dockerfile
     ```
 
-    Observe the base image is changed from `registry.access.redhat.com/ubi8/nodejs-12` to `quay.io/konveyor/nodejs-12` in the generated nodejs dockerfile.
-
-    ```console
-    FROM quay.io/konveyor/nodejs-12
-    COPY . .
-    RUN npm install
-    RUN npm run build
-    EXPOSE 8080
-    CMD sh start-nodejs.sh
-    ```
-
-    The CMD instruction in the generated dockerfile is modified to use the `start-nodejs.sh` file.
+    Observe the base image is changed from `registry.access.redhat.com/ubi8/nodejs-12` to `quay.io/konveyor/nodejs-12` in the generated nodejs dockerfile. The CMD instruction in the generated dockerfile is modified to use the `start-nodejs.sh` file.
 
     ```console
     FROM quay.io/konveyor/nodejs-12
