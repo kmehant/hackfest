@@ -2,7 +2,7 @@
 
 ## Steps for Move2Kube CLI
 
-1. Run Move2Kube transform on the `enterprise-app` without any customizatoins and observe the output:
+1. Run Move2Kube transform on the `enterprise-app` without any customizations and observe the output:
 
     ```console
     $ cd exercise-3-customizations/exercise-3a-overriding-built-in-transformers
